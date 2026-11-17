@@ -29,10 +29,10 @@
 
 | Folder | Feature | Owner | State | Dependency |
 | --- | --- | --- | --- | --- |
-| `campus-support/` | Initial course-information assistant over approved or synthetic course materials | Kateryna Beliai | planned | none |
-| `mcp-integrations/` | Add MCP adapters for approved, read-only sources, including Canvas only if explicitly authorized | Danylo Mintii | planned | `campus-support/` tool contracts; instructor authorization for Canvas |
-| `knowledge-rag/` | Expand approved course-material ingestion, retrieval, and citation quality | Bohdan Obukh | planned | `campus-support/` source contract |
-| `evaluation-guardrails/` | Add repeatable evaluations, expanded guardrails, and human approval for any future write action | Ilya Vorobiov | planned | `campus-support/` response/action contracts |
+| `campus-support/` | Initial course-information assistant over approved or synthetic course materials | Kateryna Beliai | demo implemented; module contribution confirmed | none |
+| `mcp-integrations/` | Add MCP adapters for approved, read-only sources, including Canvas only if explicitly authorized | Danylo Mintii | demo implemented; module contribution confirmed | `campus-support/` tool contracts; instructor authorization for Canvas |
+| `knowledge-rag/` | Expand approved course-material ingestion, retrieval, and citation quality | Bohdan Obukh | demo implemented; module contribution confirmed | `campus-support/` source contract |
+| `evaluation-guardrails/` | Add repeatable evaluations, expanded guardrails, and human approval for any future write action | Ilya Vorobiov | demo implemented; module contribution confirmed | `campus-support/` response/action contracts |
 
 Each feature folder contains its own `spec.md`, `plan.md`, and `tasks.md`. The later features are independent additions to the first feature's stable interfaces; they do not expand the MVP's data permissions by default.
 
@@ -42,3 +42,7 @@ Each feature folder contains its own `spec.md`, `plan.md`, and `tasks.md`. The l
 - `Tool`: stable name, plain-language purpose, JSON input schema, JSON output schema, read/write classification, timeout, and error shape. The agent may call only registered tools.
 - `AgentResult`: answer text, source references, tool-call summary, uncertainty state, and approval state. Never include internal secrets or hidden reasoning.
 - `ActionPolicy`: default deny for writes; a future write tool must be separately registered, require explicit user confirmation immediately before execution, and report the result without claiming success before the tool confirms it.
+
+## Checkpoint status
+
+All four module folders now exist beneath `specs/`. The code was prepared with Codex assistance from the team plan. Named module ownership is unchanged. Kateryna Beliai confirmed each member’s module contribution and GPT-use checks, and Ilya Vorobiov’s completed manual acceptance review. See [milestone1.md](../milestone1.md) for observed evidence and remaining submission steps. Gemini, MCP transport and Vercel deployment are deferred.

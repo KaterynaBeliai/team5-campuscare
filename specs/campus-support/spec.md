@@ -58,3 +58,11 @@ A student can ask a course question and receive a concise answer grounded in ins
 - Recheck that `gemini-3.8-flash` remains available on the team's Free Tier at implementation time; if not, select another function-calling model and update this plan before deployment. Demo mode remains the fallback.
 - Which two languages will the MVP explicitly support? Until decided and tested, label the supported language clearly and do not promise translation quality.
 - Does the repository owner's Vercel Hobby account deploy the private repository successfully? Verify during initial deployment; use the documented CLI path if Git integration is unavailable.
+
+## Milestone 1 implementation amendment (2026-11-17)
+
+Owner: **Kateryna Beliai**. This amendment supersedes the proposed model-backed behavior for this checkpoint. The runnable implementation uses Next.js, a deterministic `AgentProvider`, a validated local read-only tool registry, synthetic keyword retrieval with extractive answers, and integrated action-policy checks. Gemini and live MCP transport remain unimplemented. No external model request occurs, so external-model consent UI is deferred with the model feature. No model availability or free-tier claim in the original proposal has been verified for this implementation.
+
+T2–T8 have a local demo implementation and automated checks; Gemini-specific parts of T5 and consent UI in T3 remain deferred. T1 uses synthetic English-only fixtures with human corpus review pending. T9 deployment is documented but not executed. Request bodies and messages are bounded; rate limiting remains a hosting follow-up. The app has no write tools, private data, credentials, model key, persistent history, or live university connection.
+
+Re-planning: `Gemini function calling` → `deterministic demo provider for milestone 1`; `no application code exists` → `local implementation exists`; `future feature folders` → `three integrated feature modules with their own specs`.

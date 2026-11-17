@@ -1,0 +1,16 @@
+✔ T5 / AC-2, AC-3: course request calls registered search and cites its exact result (1.276083ms)
+✔ T4 / AC-4: unknown subject and missing deadline return no evidence (0.388458ms)
+✔ T7 / AC-5: personal and write requests call no tools (0.085083ms)
+✔ T5 / AC-2: unknown tools and invalid inputs fail closed (0.191583ms)
+✔ T7 / AC-7: malicious source remains plain data, not an executable tool instruction (0.096458ms)
+✔ T5 / AC-2: greeting needs no tool (0.060417ms)
+✔ T6 / AC-1: HTTP validates invalid JSON, empty and oversized messages (13.414667ms)
+✔ T6 / AC-9, AC-10: full API returns demo response without calling external fetch (0.898875ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 193.842666

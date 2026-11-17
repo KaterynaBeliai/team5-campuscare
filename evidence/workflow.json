@@ -1,0 +1,64 @@
+{
+  "capturedAt": "2026-11-17T21:21:59.721Z",
+  "method": "POST",
+  "path": "/api/chat",
+  "input": {
+    "message": "What are the assignment requirements?"
+  },
+  "httpStatus": 200,
+  "observed": {
+    "answer": "Synthetic demonstration material:\n\nFor the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+    "sources": [
+      {
+        "id": "demo-assignment",
+        "title": "Synthetic course handbook",
+        "section": "Project brief",
+        "url": "/sources/demo-assignment",
+        "text": "For the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+        "keywords": [
+          "assignment",
+          "requirements",
+          "project",
+          "brief",
+          "submit",
+          "submission"
+        ],
+        "synthetic": true,
+        "owner": "Bohdan Obukh",
+        "reviewed": "Pending human review"
+      }
+    ],
+    "toolCalls": [
+      {
+        "name": "search_course_materials",
+        "input": {
+          "query": "What are the assignment requirements?"
+        },
+        "output": [
+          {
+            "id": "demo-assignment",
+            "title": "Synthetic course handbook",
+            "section": "Project brief",
+            "url": "/sources/demo-assignment",
+            "text": "For the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+            "keywords": [
+              "assignment",
+              "requirements",
+              "project",
+              "brief",
+              "submit",
+              "submission"
+            ],
+            "synthetic": true,
+            "owner": "Bohdan Obukh",
+            "reviewed": "Pending human review"
+          }
+        ]
+      }
+    ],
+    "mode": "deterministic-demo",
+    "uncertainty": false,
+    "approval": "not-required"
+  },
+  "reviewer": "Codex automated execution; Ilya Vorobiov human review pending"
+}

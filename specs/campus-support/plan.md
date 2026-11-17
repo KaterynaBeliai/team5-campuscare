@@ -81,3 +81,11 @@ sequenceDiagram
 - Open risk: retrieved content may contain prompt injection. Mitigation: treat it strictly as quoted evidence, constrain tools in code, and test malicious sample text.
 - Assumption that requires re-planning: the course requires the app to process real personal student questions. If confirmed, the free-tier Gemini configuration is unsuitable without a separate privacy, consent, and provider review.
 - Assumption that requires re-planning: the team obtains authorized access to private student records or write APIs. If that occurs, create a separate feature with authentication, data minimization, authorization, approval, and audit requirements before integration.
+
+## Milestone 1 implementation amendment (2026-11-17)
+
+Owner: **Kateryna Beliai**. This amendment supersedes the proposed model-backed behavior for this checkpoint. The runnable implementation uses Next.js, a deterministic `AgentProvider`, a validated local read-only tool registry, synthetic keyword retrieval with extractive answers, and integrated action-policy checks. Gemini and live MCP transport remain unimplemented. No external model request occurs, so external-model consent UI is deferred with the model feature. No model availability or free-tier claim in the original proposal has been verified for this implementation.
+
+T2–T8 have a local demo implementation and automated checks; Gemini-specific parts of T5 and consent UI in T3 remain deferred. T1 uses synthetic English-only fixtures with human corpus review pending. T9 deployment is documented but not executed. Request bodies and messages are bounded; rate limiting remains a hosting follow-up. The app has no write tools, private data, credentials, model key, persistent history, or live university connection.
+
+Re-planning: `Gemini function calling` → `deterministic demo provider for milestone 1`; `no application code exists` → `local implementation exists`; `future feature folders` → `three integrated feature modules with their own specs`.

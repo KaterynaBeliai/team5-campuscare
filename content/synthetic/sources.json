@@ -1,0 +1,37 @@
+[
+  {
+    "id": "demo-assignment",
+    "title": "Synthetic course handbook",
+    "section": "Project brief",
+    "url": "/sources/demo-assignment",
+    "text": "For the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+    "keywords": [
+      "assignment",
+      "requirements",
+      "project",
+      "brief",
+      "submit",
+      "submission"
+    ],
+    "synthetic": true,
+    "owner": "Bohdan Obukh",
+    "reviewed": "Pending human review"
+  },
+  {
+    "id": "demo-hours",
+    "title": "Synthetic course handbook",
+    "section": "Office hours",
+    "url": "/sources/demo-hours",
+    "text": "In this fictional example, office hours take place on Tuesdays from 14:00 to 15:00. This is sample data, not an actual instructor schedule.",
+    "keywords": [
+      "office",
+      "hours",
+      "schedule",
+      "instructor",
+      "tuesday"
+    ],
+    "synthetic": true,
+    "owner": "Bohdan Obukh",
+    "reviewed": "Pending human review"
+  }
+]
