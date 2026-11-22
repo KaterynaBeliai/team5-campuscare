@@ -1,0 +1,94 @@
+{
+  "timestamp": "2026-11-22T21:55:24.691444+00:00",
+  "deployment": "dpl_Hq1tcxqzcRKZBb1418e7is6uywqk",
+  "commit": "dd9077f5a8e478f538275d7322e139731d6bbcc1",
+  "input": {
+    "message": "What are the assignment requirements?",
+    "consent": true
+  },
+  "result": {
+    "answer": "Synthetic demonstration material:\n\nFor the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+    "sources": [
+      {
+        "id": "demo-assignment",
+        "title": "Synthetic course handbook",
+        "section": "Project brief",
+        "url": "/sources/demo-assignment",
+        "text": "For the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+        "keywords": [
+          "assignment",
+          "requirements",
+          "project",
+          "brief",
+          "submit",
+          "submission"
+        ],
+        "synthetic": true,
+        "owner": "Bohdan Obukh",
+        "reviewed": "Pending human review"
+      }
+    ],
+    "toolCalls": [
+      {
+        "name": "search_course_materials",
+        "input": {
+          "query": "What are the assignment requirements?"
+        },
+        "output": [
+          {
+            "id": "demo-assignment",
+            "title": "Synthetic course handbook",
+            "section": "Project brief",
+            "url": "/sources/demo-assignment",
+            "text": "For the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+            "keywords": [
+              "assignment",
+              "requirements",
+              "project",
+              "brief",
+              "submit",
+              "submission"
+            ],
+            "synthetic": true,
+            "owner": "Bohdan Obukh",
+            "reviewed": "Pending human review"
+          }
+        ]
+      }
+    ],
+    "mode": "deterministic-demo",
+    "model": "campuscare-rule-agent-v2",
+    "uncertainty": false,
+    "approval": "not-required",
+    "trace": [
+      {
+        "stage": "validation",
+        "status": "passed"
+      },
+      {
+        "stage": "policy",
+        "status": "allowed"
+      },
+      {
+        "stage": "provider",
+        "status": "tool"
+      },
+      {
+        "stage": "tool",
+        "status": "executed",
+        "tool": "search_course_materials",
+        "sourceIds": [
+          "demo-assignment"
+        ]
+      },
+      {
+        "stage": "grounding",
+        "status": "verified",
+        "sourceIds": [
+          "demo-assignment"
+        ]
+      }
+    ],
+    "fallbackReason": "Gemini unavailable (provider-error). This answer uses local demo mode."
+  }
+}
