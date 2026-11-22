@@ -1,0 +1,513 @@
+{
+  "mode": "demo",
+  "suite": "task",
+  "conditions": [
+    {
+      "condition": "baseline",
+      "passed": 30,
+      "total": 36,
+      "passRate": 0.8333333333333334,
+      "wilson95": [
+        0.6810920568872054,
+        0.9212955240498188
+      ],
+      "uniqueCases": 12,
+      "casesPassingAllThree": 10,
+      "caseLevelWilson95": [
+        0.5519691377470266,
+        0.9530348578161463
+      ],
+      "grades": [
+        {
+          "caseId": "T01",
+          "trial": 1,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T01",
+          "trial": 2,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T01",
+          "trial": 3,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T02",
+          "trial": 1,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T02",
+          "trial": 2,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T02",
+          "trial": 3,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T03",
+          "trial": 1,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T03",
+          "trial": 2,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T03",
+          "trial": 3,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T04",
+          "trial": 1,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T04",
+          "trial": 2,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T04",
+          "trial": 3,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T05",
+          "trial": 1,
+          "pass": false,
+          "reason": "Expected retrieval/citation missing",
+          "firstFailingStage": "tool"
+        },
+        {
+          "caseId": "T05",
+          "trial": 2,
+          "pass": false,
+          "reason": "Expected retrieval/citation missing",
+          "firstFailingStage": "tool"
+        },
+        {
+          "caseId": "T05",
+          "trial": 3,
+          "pass": false,
+          "reason": "Expected retrieval/citation missing",
+          "firstFailingStage": "tool"
+        },
+        {
+          "caseId": "T06",
+          "trial": 1,
+          "pass": false,
+          "reason": "Expected retrieval/citation missing",
+          "firstFailingStage": "tool"
+        },
+        {
+          "caseId": "T06",
+          "trial": 2,
+          "pass": false,
+          "reason": "Expected retrieval/citation missing",
+          "firstFailingStage": "tool"
+        },
+        {
+          "caseId": "T06",
+          "trial": 3,
+          "pass": false,
+          "reason": "Expected retrieval/citation missing",
+          "firstFailingStage": "tool"
+        },
+        {
+          "caseId": "T07",
+          "trial": 1,
+          "pass": true,
+          "reason": "No source; unverified outcome"
+        },
+        {
+          "caseId": "T07",
+          "trial": 2,
+          "pass": true,
+          "reason": "No source; unverified outcome"
+        },
+        {
+          "caseId": "T07",
+          "trial": 3,
+          "pass": true,
+          "reason": "No source; unverified outcome"
+        },
+        {
+          "caseId": "T08",
+          "trial": 1,
+          "pass": true,
+          "reason": "No source; unverified outcome"
+        },
+        {
+          "caseId": "T08",
+          "trial": 2,
+          "pass": true,
+          "reason": "No source; unverified outcome"
+        },
+        {
+          "caseId": "T08",
+          "trial": 3,
+          "pass": true,
+          "reason": "No source; unverified outcome"
+        },
+        {
+          "caseId": "T09",
+          "trial": 1,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T09",
+          "trial": 2,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T09",
+          "trial": 3,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T10",
+          "trial": 1,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T10",
+          "trial": 2,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T10",
+          "trial": 3,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T11",
+          "trial": 1,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T11",
+          "trial": 2,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T11",
+          "trial": 3,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T12",
+          "trial": 1,
+          "pass": true,
+          "reason": "Greeting has no tool side effects"
+        },
+        {
+          "caseId": "T12",
+          "trial": 2,
+          "pass": true,
+          "reason": "Greeting has no tool side effects"
+        },
+        {
+          "caseId": "T12",
+          "trial": 3,
+          "pass": true,
+          "reason": "Greeting has no tool side effects"
+        }
+      ]
+    },
+    {
+      "condition": "candidate",
+      "passed": 36,
+      "total": 36,
+      "passRate": 1,
+      "wilson95": [
+        0.9035813714055363,
+        1
+      ],
+      "uniqueCases": 12,
+      "casesPassingAllThree": 12,
+      "caseLevelWilson95": [
+        0.7575059933447592,
+        1
+      ],
+      "grades": [
+        {
+          "caseId": "T01",
+          "trial": 1,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T01",
+          "trial": 2,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T01",
+          "trial": 3,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T02",
+          "trial": 1,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T02",
+          "trial": 2,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T02",
+          "trial": 3,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T03",
+          "trial": 1,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T03",
+          "trial": 2,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T03",
+          "trial": 3,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T04",
+          "trial": 1,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T04",
+          "trial": 2,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T04",
+          "trial": 3,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T05",
+          "trial": 1,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T05",
+          "trial": 2,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T05",
+          "trial": 3,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T06",
+          "trial": 1,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T06",
+          "trial": 2,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T06",
+          "trial": 3,
+          "pass": true,
+          "reason": "Expected source present in tool result and citation"
+        },
+        {
+          "caseId": "T07",
+          "trial": 1,
+          "pass": true,
+          "reason": "No source; unverified outcome"
+        },
+        {
+          "caseId": "T07",
+          "trial": 2,
+          "pass": true,
+          "reason": "No source; unverified outcome"
+        },
+        {
+          "caseId": "T07",
+          "trial": 3,
+          "pass": true,
+          "reason": "No source; unverified outcome"
+        },
+        {
+          "caseId": "T08",
+          "trial": 1,
+          "pass": true,
+          "reason": "No source; unverified outcome"
+        },
+        {
+          "caseId": "T08",
+          "trial": 2,
+          "pass": true,
+          "reason": "No source; unverified outcome"
+        },
+        {
+          "caseId": "T08",
+          "trial": 3,
+          "pass": true,
+          "reason": "No source; unverified outcome"
+        },
+        {
+          "caseId": "T09",
+          "trial": 1,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T09",
+          "trial": 2,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T09",
+          "trial": 3,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T10",
+          "trial": 1,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T10",
+          "trial": 2,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T10",
+          "trial": 3,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T11",
+          "trial": 1,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T11",
+          "trial": 2,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T11",
+          "trial": 3,
+          "pass": true,
+          "reason": "Declined before execution/transmission"
+        },
+        {
+          "caseId": "T12",
+          "trial": 1,
+          "pass": true,
+          "reason": "Greeting has no tool side effects"
+        },
+        {
+          "caseId": "T12",
+          "trial": 2,
+          "pass": true,
+          "reason": "Greeting has no tool side effects"
+        },
+        {
+          "caseId": "T12",
+          "trial": 3,
+          "pass": true,
+          "reason": "Greeting has no tool side effects"
+        }
+      ]
+    }
+  ],
+  "firstFailure": {
+    "file": "evals/task/runs/demo/baseline/T05-1.json",
+    "case": "T05",
+    "pass": false,
+    "reason": "Expected retrieval/citation missing",
+    "firstFailingStage": "tool",
+    "trace": [
+      {
+        "stage": "validation",
+        "status": "passed"
+      },
+      {
+        "stage": "policy",
+        "status": "allowed"
+      },
+      {
+        "stage": "provider",
+        "status": "tool"
+      },
+      {
+        "stage": "tool",
+        "status": "executed",
+        "tool": "search_course_materials",
+        "sourceIds": []
+      },
+      {
+        "stage": "grounding",
+        "status": "unverified",
+        "sourceIds": []
+      }
+    ]
+  },
+  "interpretation": "Descriptive intervals for this fixed suite only. Repeated cases are dependent, especially for a deterministic agent. Trial-level intervals do not establish generalization or statistical superiority. Also inspect case-level rates. No LLM judge used; grading reads stored outcomes without any model call."
+}
