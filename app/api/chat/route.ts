@@ -1,4 +1,4 @@
-import { runAgent } from '../../../src/agent/run';
+import { answerRequest } from '../../../src/agent/model';
 export async function POST(request: Request) {
  // Bound the streamed body, including clients without Content-Length.
  const reader = request.body?.getReader();
@@ -15,6 +15,6 @@ export async function POST(request: Request) {
  let data: unknown;
  try {data=JSON.parse(new TextDecoder().decode(body));} catch {return Response.json({error:'Invalid JSON.'},{status:400});}
  if(!data || typeof data!=='object' || !('message' in data) || typeof data.message!=='string' || !data.message.trim() || data.message.length>1000) return Response.json({error:'Enter a question between 1 and 1,000 characters.'},{status:400});
- try {return Response.json(runAgent(data.message),{headers:{'Cache-Control':'no-store'}});}
+ try {return Response.json(await answerRequest(data.message, 'consent' in data && data.consent === true),{headers:{'Cache-Control':'no-store'}});}
  catch {return Response.json({error:'The demo could not complete this request.'},{status:500});}
 }

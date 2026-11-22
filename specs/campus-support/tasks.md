@@ -2,6 +2,8 @@
 
 ### T1: Confirm MVP sources and boundaries
 
+- Milestone 2 status: done — synthetic English-only fixtures retained; no real university data used.
+
 - Task: Confirm whether the instructor approves any Canvas course materials for project use; until then define synthetic course fixtures, supported language, demo-mode behavior, and exclusions for personal data and writes.
 - Serves: AC-4, AC-5, AC-6, AC-8, AC-9, AC-10, AC-11
 - Owner: Kateryna Beliai, with review by all module owners
@@ -10,6 +12,8 @@
 - Check: Source inventory distinguishes synthetic fixtures from real materials; no Canvas material is included without explicit approval for both project use and provider processing; the MVP spec excludes private data and write tools.
 
 ### T2: Scaffold the web application and contracts
+
+- Milestone 2 status: done — Next.js scaffold and shared trace/result contracts implemented.
 
 - Task: Create the TypeScript app skeleton and shared request, tool, source, and response types.
 - Serves: AC-1, AC-2
@@ -20,6 +24,8 @@
 
 ### T3: Build the chat and citation interface
 
+- Milestone 2 status: done — chat, citations, explicit per-request session consent and actual response-mode display implemented.
+
 - Task: Implement question entry, answer/error display, source cards, model-processing consent, demo-mode notice, and informational-prototype notice.
 - Serves: AC-1, AC-3, AC-8, AC-10, AC-11
 - Owner: Kateryna Beliai
@@ -28,6 +34,8 @@
 - Check: A sample response displays readable text and clickable source references; empty input is handled visibly.
 
 ### T4: Add approved sample corpus and retrieval tools
+
+- Milestone 2 status: done — keyword retrieval with a controlled synonym-expansion candidate and canonical source checks.
 
 - Task: Add synthetic course examples, or instructor-approved course files if approval is granted, and a read-only search tool with source metadata.
 - Serves: AC-2, AC-3, AC-4
@@ -38,6 +46,8 @@
 
 ### T5: Implement constrained agent and demo provider
 
+- Milestone 2 status: re-planned — deterministic and Gemini adapters implemented; live Gemini verification requires server credentials and an available free-tier model.
+
 - Task: Use Gemini function calling to select registered tools, validate tool inputs/outputs, produce grounded or uncertainty responses, and include a deterministic demo provider.
 - Serves: AC-2, AC-3, AC-4, AC-7, AC-9, AC-10
 - Owner: Kateryna Beliai
@@ -46,6 +56,8 @@
 - Check: Agent calls only registered tools; citations must originate from tool results; no-match yields an uncertainty response; injected instructions in a sample source do not change policy.
 
 ### T6: Add bounded chat API
+
+- Milestone 2 status: done — bounded API, input validation, server-side policy and consent enforcement implemented; distributed rate limiting remains a documented limitation.
 
 - Task: Implement the server route with message validation, request limits, safe errors, server-side agent invocation, and enforcement of the session consent state.
 - Serves: AC-1, AC-6, AC-10, AC-11
@@ -56,6 +68,8 @@
 
 ### T7: Add safety and privacy evaluation cases
 
+- Milestone 2 status: done — 14 automated checks and replayable task/security evaluation harness implemented; recorded trials are reported separately.
+
 - Task: Create repeatable cases for supported questions, missing evidence, personal-status requests, write requests, and prompt-injection text.
 - Serves: AC-4, AC-5, AC-6, AC-7
 - Owner: Ilya Vorobiov
@@ -65,6 +79,8 @@
 
 ### T8: Connect UI to API and demonstrate end-to-end flow
 
+- Milestone 2 status: re-planned — UI/API connected and baseline deployed; release UI/model browser checks pending the new deployment.
+
 - Task: Connect chat submission to the API and render answer, citations, uncertainty, and error states.
 - Serves: AC-1, AC-3, AC-4, AC-8
 - Owner: Kateryna Beliai
@@ -73,6 +89,8 @@
 - Check: A browser demo completes a supported question and a missing-source question with expected citations/fallback, and declining model consent keeps requests in demo mode.
 
 ### T9: Document and verify deployment configuration
+
+- Milestone 2 status: re-planned — Vercel Hobby baseline is public; final release commit and deployment will be recorded after checks.
 
 - Task: Document the selected host, private repository connection method, environment variables, and demo-mode operation.
 - Serves: AC-6, AC-9

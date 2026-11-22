@@ -1,6 +1,6 @@
 {
   "name": "campuscare",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,22 +8,27 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test evaluation/*.test.ts",
-    "evidence": "tsx evaluation/evidence.ts"
+    "evidence": "tsx evaluation/evidence.ts",
+    "eval:run": "tsx evals/run.ts",
+    "eval:grade": "tsx evals/report.ts"
   },
   "dependencies": {
+    "@ai-sdk/google": "^4.0.124",
+    "ai": "^7.0.179",
     "next": "^16.4.6",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "typescript": "^5.9.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
-    "tsx": "^4.20.0"
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
   },
   "engines": {
-    "node": ">=20.9"
+    "node": ">=22"
   },
   "packageManager": "pnpm@11.25.0"
 }

@@ -1,0 +1,11 @@
+{
+  "url": "https://team5-campuscare.vercel.app",
+  "deploymentId": "dpl_BD6LppT3rSg6ukFywt2YLD9Ng5p2",
+  "commit": "229ab4a4c275cf203094ef995d8be6ce9cdc8535",
+  "status": "READY",
+  "target": "production",
+  "publicHomeStatus": 200,
+  "publicChatStatus": 200,
+  "mode": "deterministic-demo",
+  "note": "Initial milestone 1 demo deployment; not final milestone 2 release."
+}

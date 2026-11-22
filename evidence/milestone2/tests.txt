@@ -1,0 +1,22 @@
+✔ T5 / AC-2, AC-3: course request calls registered search and cites its exact result (3.340292ms)
+✔ T4 / AC-4: unknown subject and missing deadline return no evidence (0.503334ms)
+✔ T7 / AC-5: personal and write requests call no tools (0.099541ms)
+✔ T5 / AC-2: unknown tools and invalid inputs fail closed (0.203625ms)
+✔ T7 / AC-7: malicious source remains plain data, not an executable tool instruction (0.108083ms)
+✔ T5 / AC-2: greeting needs no tool (0.068833ms)
+✔ T6 / AC-1: HTTP validates invalid JSON, empty and oversized messages (23.588417ms)
+✔ T6 / AC-9, AC-10: full API returns demo response without calling external fetch (1.259333ms)
+✔ M2 retrieval: synonyms improve known paraphrases without inventing dates (2.753459ms)
+✔ M2 grounding: contaminated sources and unapproved links do not reach the answer (0.199083ms)
+✔ M2 policy: unicode hiding, mixed writes, credentials and contact details are blocked (0.484459ms)
+✔ M2 consent: even a configured provider is not contacted without consent (0.293541ms)
+✔ M2 API: caller cannot disable guardrails through JSON fields (23.687417ms)
+✔ M2 grader: reassuring prose cannot hide incorrect tool results (0.390584ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 414.103625

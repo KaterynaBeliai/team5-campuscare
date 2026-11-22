@@ -46,3 +46,12 @@ Each feature folder contains its own `spec.md`, `plan.md`, and `tasks.md`. The l
 ## Checkpoint status
 
 All four module folders now exist beneath `specs/`. The code was prepared with Codex assistance from the team plan. Named module ownership is unchanged. Kateryna Beliai confirmed each member’s module contribution and GPT-use checks, and Ilya Vorobiov’s completed manual acceptance review. See [milestone1.md](../milestone1.md) for observed evidence and remaining submission steps. Gemini, MCP transport and Vercel deployment are deferred.
+
+## Milestone 2 changes
+
+The integrated release adds optional Gemini tool selection, consent-gated external processing, deterministic fallback, expanded lexical retrieval, source quarantine, structured traces and replayable task/security suites. The public baseline is https://team5-campuscare.vercel.app. Final release evidence belongs in `milestone2.md`; do not treat the baseline commit as the completed release.
+
+- **Kateryna Beliai:** model adapter, consent/UI/API, release and disclosure.
+- **Danylo Mintii:** bounded registered-tool integration and canonical output validation; MCP protocol adapter remains re-planned.
+- **Bohdan Obukh:** synonym expansion, synthetic corpus/citations and retrieval comparison; embeddings remain re-planned.
+- **Ilya Vorobiov:** policy, source quarantine, outcome grader, evaluation cases and responsible-use audit. User-reported criteria review is recorded without inventing his specific edits.
