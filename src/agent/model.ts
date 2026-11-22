@@ -34,5 +34,12 @@ export async function runModelAgent(message:string,options:RunOptions={}):Promis
 }
 export async function answerRequest(message:string,consent:boolean):Promise<AgentResult> {
  if(!consent) return runAgent(message);
- try{return await runModelAgent(message);}catch{return {...runAgent(message),fallbackReason:'The model is unavailable or not configured. This answer uses local demo mode.'};}
+ try{return await runModelAgent(message);}catch(error){
+  // Only allowlisted diagnostics: never log provider bodies, headers or credentials.
+  const name=error instanceof Error?error.name:'';
+  const status=error&&typeof error==='object'&&'statusCode' in error?error.statusCode:null;
+  const reason=name==='TimeoutError'||name==='AbortError'?'timeout':status===429?'rate-limit':status===401||status===403?'access-denied':status===404?'model-not-found':error instanceof Error&&error.message==='MODEL_NOT_CONFIGURED'?'not-configured':'provider-error';
+  console.warn('CampusCare model fallback:',reason);
+  return {...runAgent(message),fallbackReason:`Gemini unavailable (${reason}). This answer uses local demo mode.`};
+ }
 }

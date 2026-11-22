@@ -1,0 +1,96 @@
+{
+  "url": "https://team5-campuscare.vercel.app/api/chat",
+  "timestamp": "2026-11-22T21:53:11.551509+00:00",
+  "deployment": "dpl_756ximY1ouKWt85vYoBYLKy4t11s",
+  "commit": "ca4b9cf0bcc955944a9d54f750da66e129193a1f",
+  "input": {
+    "message": "What are the assignment requirements?",
+    "consent": true
+  },
+  "httpStatus": 200,
+  "result": {
+    "answer": "Synthetic demonstration material:\n\nFor the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+    "sources": [
+      {
+        "id": "demo-assignment",
+        "title": "Synthetic course handbook",
+        "section": "Project brief",
+        "url": "/sources/demo-assignment",
+        "text": "For the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+        "keywords": [
+          "assignment",
+          "requirements",
+          "project",
+          "brief",
+          "submit",
+          "submission"
+        ],
+        "synthetic": true,
+        "owner": "Bohdan Obukh",
+        "reviewed": "Pending human review"
+      }
+    ],
+    "toolCalls": [
+      {
+        "name": "search_course_materials",
+        "input": {
+          "query": "What are the assignment requirements?"
+        },
+        "output": [
+          {
+            "id": "demo-assignment",
+            "title": "Synthetic course handbook",
+            "section": "Project brief",
+            "url": "/sources/demo-assignment",
+            "text": "For the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+            "keywords": [
+              "assignment",
+              "requirements",
+              "project",
+              "brief",
+              "submit",
+              "submission"
+            ],
+            "synthetic": true,
+            "owner": "Bohdan Obukh",
+            "reviewed": "Pending human review"
+          }
+        ]
+      }
+    ],
+    "mode": "deterministic-demo",
+    "model": "campuscare-rule-agent-v2",
+    "uncertainty": false,
+    "approval": "not-required",
+    "trace": [
+      {
+        "stage": "validation",
+        "status": "passed"
+      },
+      {
+        "stage": "policy",
+        "status": "allowed"
+      },
+      {
+        "stage": "provider",
+        "status": "tool"
+      },
+      {
+        "stage": "tool",
+        "status": "executed",
+        "tool": "search_course_materials",
+        "sourceIds": [
+          "demo-assignment"
+        ]
+      },
+      {
+        "stage": "grounding",
+        "status": "verified",
+        "sourceIds": [
+          "demo-assignment"
+        ]
+      }
+    ],
+    "fallbackReason": "The model is unavailable or not configured. This answer uses local demo mode."
+  }
+}
