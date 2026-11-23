@@ -46,7 +46,7 @@
 
 ### T5: Implement constrained agent and demo provider
 
-- Milestone 2 status: re-planned — deterministic and Gemini adapters implemented; live Gemini verification requires server credentials and an available free-tier model.
+- Milestone 2 status: re-planned — deterministic and Gemini adapters implemented; server credentials configured; Gemini 3.5 Flash-Lite passed production API and browser smoke after 3.8 Flash returned HTTP 503. Full model evaluation remains pending.
 
 - Task: Use Gemini function calling to select registered tools, validate tool inputs/outputs, produce grounded or uncertainty responses, and include a deterministic demo provider.
 - Serves: AC-2, AC-3, AC-4, AC-7, AC-9, AC-10
@@ -68,7 +68,7 @@
 
 ### T7: Add safety and privacy evaluation cases
 
-- Milestone 2 status: done — 14 automated checks and replayable task/security evaluation harness implemented; recorded trials are reported separately.
+- Milestone 2 status: done — 15 automated checks and replayable task/security evaluation harness implemented; recorded trials are reported separately.
 
 - Task: Create repeatable cases for supported questions, missing evidence, personal-status requests, write requests, and prompt-injection text.
 - Serves: AC-4, AC-5, AC-6, AC-7
@@ -79,7 +79,7 @@
 
 ### T8: Connect UI to API and demonstrate end-to-end flow
 
-- Milestone 2 status: re-planned — UI/API connected and baseline deployed; release UI/model browser checks pending the new deployment.
+- Milestone 2 status: re-planned — UI/API connected and live Gemini answer, source card and tool trace verified in browser; missing-source browser case remains pending.
 
 - Task: Connect chat submission to the API and render answer, citations, uncertainty, and error states.
 - Serves: AC-1, AC-3, AC-4, AC-8
@@ -90,7 +90,7 @@
 
 ### T9: Document and verify deployment configuration
 
-- Milestone 2 status: re-planned — Vercel Hobby baseline is public; final release commit and deployment will be recorded after checks.
+- Milestone 2 status: re-planned — Vercel production is public at commit 6290a24aedcb10bd8a00ee4d3f9d8cdd0333864b; final release approval remains pending model evaluation.
 
 - Task: Document the selected host, private repository connection method, environment variables, and demo-mode operation.
 - Serves: AC-6, AC-9

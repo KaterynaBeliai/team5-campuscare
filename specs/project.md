@@ -55,3 +55,8 @@ The integrated release adds optional Gemini tool selection, consent-gated extern
 - **Danylo Mintii:** bounded registered-tool integration and canonical output validation; MCP protocol adapter remains re-planned.
 - **Bohdan Obukh:** synonym expansion, synthetic corpus/citations and retrieval comparison; embeddings remain re-planned.
 - **Ilya Vorobiov:** policy, source quarantine, outcome grader, evaluation cases and responsible-use audit. User-reported criteria review is recorded without inventing his specific edits.
+
+
+## Verified model configuration, 23 November 2026
+
+Kateryna Beliai owns this re-plan: Gemini 3.8 Flash returned HTTP 503 in production. The configured model changed to `gemini-3.5-flash-lite`, which passed a real API and browser tool-calling smoke. This supersedes earlier references to 3.8 as the selected model. Google documents free-tier text input/output and function calling for Flash-Lite. Full model evaluation is still pending; a single successful smoke is not evidence of broad reliability.

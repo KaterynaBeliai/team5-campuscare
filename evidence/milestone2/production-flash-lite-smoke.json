@@ -1,0 +1,97 @@
+{
+  "timestamp": "2026-11-23T14:54:12.658184+00:00",
+  "deployment": "dpl_Gc8UBMqVXTqb5NgMb3KLZfXsfbuJ",
+  "commit": "6290a24aedcb10bd8a00ee4d3f9d8cdd0333864b",
+  "input": {
+    "message": "What are the assignment requirements?",
+    "consent": true
+  },
+  "result": {
+    "answer": "Synthetic demonstration material:\n\nFor the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+    "sources": [
+      {
+        "id": "demo-assignment",
+        "title": "Synthetic course handbook",
+        "section": "Project brief",
+        "url": "/sources/demo-assignment",
+        "text": "For the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+        "keywords": [
+          "assignment",
+          "requirements",
+          "project",
+          "brief",
+          "submit",
+          "submission"
+        ],
+        "synthetic": true,
+        "owner": "Bohdan Obukh",
+        "reviewed": "Pending human review"
+      }
+    ],
+    "toolCalls": [
+      {
+        "name": "search_course_materials",
+        "input": {
+          "query": "What are the assignment requirements?"
+        },
+        "output": [
+          {
+            "id": "demo-assignment",
+            "title": "Synthetic course handbook",
+            "section": "Project brief",
+            "url": "/sources/demo-assignment",
+            "text": "For the fictional CampusCare demo assignment, submit a project overview, one tool-call trace, and a short reflection. This fixture does not describe an actual university assignment.",
+            "keywords": [
+              "assignment",
+              "requirements",
+              "project",
+              "brief",
+              "submit",
+              "submission"
+            ],
+            "synthetic": true,
+            "owner": "Bohdan Obukh",
+            "reviewed": "Pending human review"
+          }
+        ]
+      }
+    ],
+    "mode": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "uncertainty": false,
+    "approval": "not-required",
+    "trace": [
+      {
+        "stage": "validation",
+        "status": "passed"
+      },
+      {
+        "stage": "policy",
+        "status": "allowed"
+      },
+      {
+        "stage": "provider",
+        "status": "requested"
+      },
+      {
+        "stage": "tool",
+        "status": "executed",
+        "tool": "search_course_materials",
+        "sourceIds": [
+          "demo-assignment"
+        ]
+      },
+      {
+        "stage": "provider",
+        "status": "completed"
+      },
+      {
+        "stage": "grounding",
+        "status": "verified",
+        "sourceIds": [
+          "demo-assignment"
+        ]
+      }
+    ]
+  }
+}

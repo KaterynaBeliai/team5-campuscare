@@ -97,3 +97,8 @@ Owner: **Kateryna Beliai**. The app now supports a Google Gemini tool-calling ad
 The model chooses the read-only search tool; actual search uses the original bounded question so a model cannot rewrite a blocked request into another capability. At most two tool calls/two model steps are allowed; output is composed from exact validated source excerpts instead of unchecked model prose. The tradeoff is limited fluency in exchange for traceable claims. Inputs, tool names, source inventory IDs and canonical URLs are checked; suspicious retrieved text is quarantined. These are defense layers, not proof that a heuristic detects every attack or personal identifier.
 
 The release retains three integrated features: local tool integration, retrieval/citations, and runtime guardrails/evaluation. Live MCP transport and embeddings remain **re-planned**, not represented as implemented. `evals/` stores predeclared cases, recorded trials and an offline outcome grader. Human review of the AI-assisted case draft was reported by Kateryna Beliai; exact edits by Ilya were not supplied. Do not claim independent human authorship.
+
+
+## Verified model configuration, 23 November 2026
+
+Kateryna Beliai owns this re-plan: Gemini 3.8 Flash returned HTTP 503 in production. The configured model changed to `gemini-3.5-flash-lite`, which passed a real API and browser tool-calling smoke. This supersedes earlier references to 3.8 as the selected model. Google documents free-tier text input/output and function calling for Flash-Lite. Full model evaluation is still pending; a single successful smoke is not evidence of broad reliability.
