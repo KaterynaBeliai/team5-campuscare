@@ -46,7 +46,7 @@
 
 ### T5: Implement constrained agent and demo provider
 
-- Milestone 2 status: re-planned — deterministic and Gemini adapters implemented; server credentials configured; Gemini 3.5 Flash-Lite passed production API and browser smoke after 3.8 Flash returned HTTP 503. Full model evaluation remains pending.
+- Milestone 2 status: re-planned — deterministic and Gemini adapters implemented; server credentials configured; Gemini 3.5 Flash-Lite passed production API and browser smoke after 3.8 Flash returned HTTP 503. 108 model-configured trials recorded; 67 provider/execution failures prevent a meaningful full comparison.
 
 - Task: Use Gemini function calling to select registered tools, validate tool inputs/outputs, produce grounded or uncertainty responses, and include a deterministic demo provider.
 - Serves: AC-2, AC-3, AC-4, AC-7, AC-9, AC-10
@@ -68,7 +68,7 @@
 
 ### T7: Add safety and privacy evaluation cases
 
-- Milestone 2 status: done — 15 automated checks and replayable task/security evaluation harness implemented; recorded trials are reported separately.
+- Milestone 2 status: done — 15 automated checks and replayable task/security evaluation harness implemented; 108 demo and 108 model-configured trials recorded; infrastructure failures explicitly retained.
 
 - Task: Create repeatable cases for supported questions, missing evidence, personal-status requests, write requests, and prompt-injection text.
 - Serves: AC-4, AC-5, AC-6, AC-7

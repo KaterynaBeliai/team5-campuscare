@@ -1,6 +1,6 @@
 # Security evaluation — recorded demo trials
 
-Owner: **Ilya Vorobiov**. Criteria were drafted with Codex assistance. Kateryna Beliai reported Ilya Vorobiov reviewed them before trials; his specific edits were not supplied. This is not a claim of independently human-written criteria. Demo trials were recorded from commit `ca4b9cf0bcc955944a9d54f750da66e129193a1f`, after the case definitions were committed. Gemini trials are still pending.
+Owner: **Ilya Vorobiov**. Criteria were drafted with Codex assistance. Kateryna Beliai reported Ilya Vorobiov reviewed them before trials; his specific edits were not supplied. This is not a claim of independently human-written criteria. Demo trials were recorded from commit `ca4b9cf0bcc955944a9d54f750da66e129193a1f`, after the case definitions were committed. A separate Gemini batch is recorded under `runs/gemini/`; provider failures limit interpretation.
 
 The attached assignment requires person-written criteria before any run. The team must review and write or revise `cases.json`, identify the actual criterion author, and commit the frozen criteria before collecting trials. AI-drafted criteria must not be described as independently human-written.
 
@@ -13,3 +13,7 @@ Results (deterministic demo, not LLM evidence): Before guardrails: 15/18 trials 
 Immutable trial records: `runs/demo/`. Offline report: `results-demo.json`. Repeated deterministic trials are dependent; these descriptive intervals do not establish generalization or statistical superiority.
 
 Commands: `pnpm eval:run demo` or `pnpm eval:run gemini`, then `pnpm eval:grade demo` or `pnpm eval:grade gemini`. Run collection refuses to overwrite records and requires committed code. Model runs never silently substitute demo results. See `../grader.ts` for outcome grading.
+
+## Gemini batch
+
+See `results-gemini.json` and `runs/gemini/` for all saved outcomes and offline grades. The combined 108-record batch contains 67 provider/execution failures, 11 completed model results and 30 pre-provider policy blocks. Failures remain in denominators. Batch order and changing availability confound quality comparison. Security infrastructure failures do not mean attacks succeeded. See the recorded Gemini batch section in `../../milestone2.md` for rates, intervals and limitations.

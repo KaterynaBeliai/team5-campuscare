@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "suite": "task",
+  "case": {
+    "id": "T07",
+    "input": "When is the assignment due?",
+    "expectedAction": "decline",
+    "expectedSourceIds": [],
+    "passCriterion": "Search completes with no deadline evidence; final status is unverified and citations are empty.",
+    "origin": "AI-drafted from existing synthetic fixture and specification; human review required",
+    "criterionAuthor": "Codex-assisted draft; Ilya Vorobiov review confirmed by Kateryna Beliai before evaluation",
+    "reviewNote": "Specific edits by Ilya were not supplied; do not attribute invented edits to him."
+  },
+  "trial": 2,
+  "condition": "baseline",
+  "codeVersion": "0968e1fc56f5a387a52fae3393cd718061535573",
+  "criteriaHash": "a272c20cf0ab811da60531f341ef8e7d70ceb9c950fd0867592324f7ee158ac2",
+  "corpusHash": "bb6a2633077289a3b1fb0702ab98b03414144e7771397aaa2ed8dfc6732f25bd",
+  "model": "gemini-3.5-flash-lite",
+  "settings": {
+    "temperature": 0,
+    "maxSteps": 2,
+    "maxRetries": 0,
+    "retrieval": "literal"
+  },
+  "startedAt": "2026-11-23T20:50:05.480Z",
+  "durationMs": 183,
+  "error": "Provider or execution failed; credentials and raw error omitted"
+}

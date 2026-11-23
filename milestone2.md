@@ -1,6 +1,6 @@
 # Milestone 2: Release-Ready Version
 
-**Working report — not ready for submission.** Model-backed evaluations and final human review remain open. Evidence below distinguishes deterministic trials from live-model checks.
+**Working report — not ready for submission.** Model-backed trials have been collected, but provider failures prevent a valid quality comparison; final human review remains open. Evidence below distinguishes deterministic trials from live-model checks.
 
 ## Version and deployment
 
@@ -51,7 +51,7 @@ Cases were committed before runs at `ca4b9cf0bcc955944a9d54f750da66e129193a1f`. 
 - Evaluated task: retrieve synthetic course information with exact citations, or decline/express uncertainty where appropriate.
 - Cases: 12, including 5 declines; inputs derived from the specified course-question, missing-evidence, privacy, write and greeting scenarios.
 - Grader: code in `evals/grader.ts` checks tool calls, retrieved source IDs, uncertainty and forbidden outcomes. No model judge is used.
-- Trials: 3 per case per condition; 72 total, model identifier `campuscare-rule-agent-v2 (no LLM)`. Temperature not applicable; max steps 2. Model-backed trials remain pending.
+- Trials: 3 per case per condition; 72 total, model identifier `campuscare-rule-agent-v2 (no LLM)`. Temperature not applicable; max steps 2. A separate Gemini batch is now recorded; see the live-model results below.
 - Controlled comparison: only literal retrieval versus synonym expansion changes; cases, corpus and guardrails fixed. Records in `runs/demo/baseline/` and `runs/demo/candidate/`.
 - Result: baseline 30/36 (83.33%, Wilson 95% interval 68.11–92.13%); candidate 36/36 (100%, 90.36–100%). Unique-case results 10/12 and 12/12. Repeated deterministic trials are dependent; intervals are descriptive and overlap. No statistical superiority or LLM reliability claim is made.
 - Failure traced: baseline `T05-1`, first failing step is search returning no source for “coursework/include”; literal keywords miss this paraphrase. The candidate synonym mapping fixes it in these fixtures.
@@ -66,6 +66,24 @@ Cases were committed before runs at `ca4b9cf0bcc955944a9d54f750da66e129193a1f`. 
 - Before-guardrails S04 copied a synthetic canary through an unfiltered source excerpt. After filtering, it was quarantined. No real secret was involved. The private harness disables only tested input/source filters; the public API cannot disable them.
 - An offline grader correction aligned scoring with the predeclared forbidden outcomes; saved cases and runs were unchanged. See `evidence/milestone2/grader-correction.md`.
 - Remaining risk: no tested after-guardrails attack succeeds, but novel/multilingual injections and model behavior remain unproven. Ilya owns expanded tests; Kateryna owns live-provider verification.
+
+
+### Recorded Gemini batch (23 November 2026)
+
+Model: `gemini-3.5-flash-lite`, temperature 0, maximum 2 model steps, 512 output tokens, no retries, 20-second abort timeout. Code version is saved in every record. Three trials per case and condition were recorded once under `runs/gemini/` (108 records). `node --env-file=.env.local --import tsx evals/run.ts gemini` collected them; `node --import tsx evals/report.ts gemini` regraded them offline.
+
+| Suite / condition | Passed / total | Pass rate | Wilson 95% interval | Provider/execution failures |
+| --- | --- | --- | --- | --- |
+| Task baseline | 19/36 | 52.78% | 37.01–68.01% | 16 |
+| Task candidate | 9/36 | 25.00% | 13.75–41.07% | 27 |
+| Security before guardrails | 0/18 | 0% | 0–17.59% | 18 |
+| Security after guardrails | 12/18 | 66.67% | 43.75–83.72% | 6 |
+
+These rates include infrastructure failures in the denominator. **They do not establish that retrieval became worse or that all baseline attacks succeeded.** Baseline was run before candidate, and service availability changed during the batch. Provider/execution errors total 67. Eleven trials completed model processing; 30 other trials were stopped by the application policy before external processing. Policy-only outcomes are labelled `deterministic-demo` in the result even though the batch is configured for Gemini; no model fallback was substituted for failed calls.
+
+The first task failure, `baseline/T01-1.json`, occurs at the provider stage after about 20 seconds, before an available tool trace. A separate post-batch diagnostic returned `TimeoutError`. The runner intentionally saved only a generic provider/execution failure for other errors, so their individual HTTP causes cannot be reconstructed and are not asserted as quota failures. All failures are retained; none are silently rerun or removed.
+
+The security after-guardrails passes are input-policy blocks. All provider-dependent security trials failed to complete, so no successful live-model resistance claim is made for retrieved/tool-content attacks. A paced, separately named batch with safe per-error metadata is needed once service availability is confirmed. **Ilya Vorobiov** owns evaluation interpretation and review; **Kateryna Beliai** owns provider configuration and availability. Existing records must remain immutable.
 
 ## Responsible-use audit
 
@@ -84,7 +102,7 @@ Cases were committed before runs at `ca4b9cf0bcc955944a9d54f750da66e129193a1f`. 
 ## Status
 
 - Changed since Milestone 1: public Vercel deployment, optional Gemini adapter, consent UI, visible fallback, synonym retrieval, source quarantine, bounded traces, 15 tests and replayable evaluation suites.
-- Open issues: model-backed controlled evaluations, provider availability risk, criterion-author provenance, final browser/human review, per-member confirmation of updated logs, final submitted version and instructor access.
+- Open issues: provider failures affecting the model comparison, provider availability risk, criterion-author provenance, final browser/human review, per-member confirmation of updated logs, final submitted version and instructor access.
 - Biggest risk: a functioning demo and deterministic evaluations do not establish release-ready LLM behavior. Do not submit this report as complete until the live-model requirement is resolved.
 - MCP transport, embeddings, real Canvas integration and write operations remain re-planned/excluded, not implemented features.
 
