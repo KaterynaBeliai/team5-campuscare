@@ -1,12 +1,13 @@
 # Milestone 2: Release-Ready Version
 
-**Working report — not ready for submission.** Model-backed trials have been collected, but provider failures prevent a valid quality comparison; final human review remains open. Evidence below distinguishes deterministic trials from live-model checks.
+**Submission report — 24 November 2026.** This report records the delivered prototype, completed team contributions and the remaining technical limitations. Model-backed trials include provider failures; they are reported without treating them as successful model tests. Kateryna Beliai confirmed that all four members completed their assigned parts and contributed their corrections.
 
 ## Version and deployment
 
 - Private repository: [team5-campuscare](https://github.com/KaterynaBeliai/team5-campuscare).
-- Assessed application commit: `6290a24aedcb10bd8a00ee4d3f9d8cdd0333864b`. This is a checkpoint, not a final submitted version.
-- Production model: `gemini-3.5-flash-lite`; deployment `dpl_Gc8UBMqVXTqb5NgMb3KLZfXsfbuJ`, verified 23 November 2026.
+- Submitted application version: [`1ec595c764dc925bfc2463bccccd82b761dd5e3c`](https://github.com/KaterynaBeliai/team5-campuscare/tree/1ec595c764dc925bfc2463bccccd82b761dd5e3c). Subsequent report-only changes do not change the deployed application. Earlier evaluation records retain the exact code version used for each run.
+- Production model: `gemini-3.5-flash-lite`; deployment `dpl_EX6UpnBeFAVGKKiNTidXs8XmZNE8`, verified 24 November 2026 after credential rotation and restoration of `GEMINI_ENABLED=true`. Production status: READY. A consented API request completed in Gemini mode, executed search and returned the matching source without fallback.
+- Deployment and team confirmation: [release evidence](https://github.com/KaterynaBeliai/team5-campuscare/blob/milestone2-release/evidence/milestone2/release-confirmation.md).
 - Public URL: https://team5-campuscare.vercel.app
 - Usage: open the site; ask “What are the assignment requirements?”; inspect the answer, tool trace and source link. The fixture is fictional. Gemini requires explicit consent via the checkbox. Without consent, local demo mode is used. A failed provider request is visibly labelled as demo fallback.
 - Specifications: [specs/](https://github.com/KaterynaBeliai/team5-campuscare/tree/milestone2-release/specs). Tasks have explicit done or re-planned states.
@@ -39,11 +40,11 @@ Automated evidence is in [evaluation/](https://github.com/KaterynaBeliai/team5-c
 - `pnpm build`: passed locally and production deployments reached READY.
 - `pnpm eval:grade demo`: offline outcome grading of 108 saved trials; no model call.
 - Live production smoke with consent: Gemini 3.8 Flash returned HTTP 503; application returned labelled demo fallback. After changing only the configured model to `gemini-3.5-flash-lite`, the production smoke succeeded: model → search_course_materials → demo-assignment → grounded answer. Browser verification also showed Gemini mode, citation and one tool call. Evidence: `evidence/milestone2/production-flash-lite-smoke.json` and `evidence/milestone2/browser-gemini.jpg`. This smoke does not replace the full controlled suites.
-- Automated reviewer: Codex. Ilya Vorobiov's manual acceptance confirmation applies to Milestone 1; final Milestone 2 manual review is not yet recorded.
+- Automated reviewer: Codex. On 24 November 2026, Kateryna Beliai confirmed completion of all members’ assigned work and corrections for Milestone 2, including Ilya Vorobiov’s evaluation/guardrails module. This is a team-owner confirmation, not a claim that Codex independently observed each person’s review or edits.
 
 ## Evaluation
 
-Cases were committed before runs at `ca4b9cf0bcc955944a9d54f750da66e129193a1f`. Criteria were AI-assisted drafts. Kateryna Beliai reported that Ilya Vorobiov reviewed them before execution; his exact edits were not supplied. Independent human authorship is not claimed. The team must resolve this provenance against the assignment requirement before submission.
+Cases were committed before runs at `ca4b9cf0bcc955944a9d54f750da66e129193a1f`. Criteria were AI-assisted drafts. Kateryna Beliai reported that Ilya Vorobiov reviewed them before execution; his exact edits were not supplied. Independent human authorship is not claimed. The assignment asks for person-written criteria before runs: AI-assisted drafting with a reported human review is the documented provenance and remains a compliance limitation; the later completion confirmation does not establish independent human authorship.
 
 ### Task suite: `evals/task/`
 
@@ -83,7 +84,7 @@ These rates include infrastructure failures in the denominator. **They do not es
 
 The first task failure, `baseline/T01-1.json`, occurs at the provider stage after about 20 seconds, before an available tool trace. A separate post-batch diagnostic returned `TimeoutError`. The runner intentionally saved only a generic provider/execution failure for other errors, so their individual HTTP causes cannot be reconstructed and are not asserted as quota failures. All failures are retained; none are silently rerun or removed.
 
-The security after-guardrails passes are input-policy blocks. All provider-dependent security trials failed to complete, so no successful live-model resistance claim is made for retrieved/tool-content attacks. A paced, separately named batch with safe per-error metadata is needed once service availability is confirmed. **Ilya Vorobiov** owns evaluation interpretation and review; **Kateryna Beliai** owns provider configuration and availability. Existing records must remain immutable.
+The security after-guardrails passes are input-policy blocks. All provider-dependent security trials failed to complete, so no successful live-model resistance claim is made for retrieved/tool-content attacks. A paced, separately named batch with safe per-error metadata is re-planned as follow-up work. The successful 24 November production smoke confirms current connectivity, but does not replace or invalidate this failed batch. **Ilya Vorobiov** owns evaluation interpretation and review; **Kateryna Beliai** owns provider configuration and availability. Existing records must remain immutable.
 
 ## Responsible-use audit
 
@@ -92,7 +93,7 @@ The security after-guardrails passes are input-policy blocks. All provider-depen
 | Bias | Tiny English-only synthetic corpus cannot represent diverse students | Label scope; decline unsupported questions; no eligibility decisions | No demographic or multilingual coverage claim | Bohdan Obukh |
 | Privacy | Consented prompts/excerpts leave the application; free-tier provider may use them for improvement | Consent off by default; warnings; no private-data tools/history; server-only key; metadata-only logs | Heuristic filtering cannot detect all personal information; provider retention outside app control | Kateryna Beliai |
 | Intellectual property | Real course material authorization is unverified | Bundle only synthetic fixtures; citations identify fictional sources | Human corpus review and permission needed before adding real material | Bohdan Obukh |
-| Disclosure | Demo results can be mistaken for LLM behavior or official advice | Visible mode/fallback/prototype notices; separate evidence folders; no fabricated reviews | Final manual review of notices pending | Ilya Vorobiov |
+| Disclosure | Demo results can be mistaken for LLM behavior or official advice | Visible mode/fallback/prototype notices; separate evidence folders; no fabricated reviews | Team corrections/completion confirmed by Kateryna; no separate notice-review transcript recorded | Ilya Vorobiov |
 
 ## AI-use disclosure
 
@@ -102,17 +103,18 @@ The security after-guardrails passes are input-policy blocks. All provider-depen
 ## Status
 
 - Changed since Milestone 1: public Vercel deployment, optional Gemini adapter, consent UI, visible fallback, synonym retrieval, source quarantine, bounded traces, 15 tests and replayable evaluation suites.
-- Open issues: provider failures affecting the model comparison, provider availability risk, criterion-author provenance, final browser/human review, per-member confirmation of updated logs, final submitted version and instructor access.
-- Biggest risk: a functioning demo and deterministic evaluations do not establish release-ready LLM behavior. Do not submit this report as complete until the live-model requirement is resolved.
+- Team status: Kateryna Beliai confirmed on 24 November 2026 that all four members completed their assigned contributions and corrections. The table below records module responsibilities and AI-assisted decisions; exact individual edits and separate personal attestations were not supplied.
+- Open technical/assessment issues: provider failures prevent a reliable live-model comparison; criteria were AI-assisted rather than independently human-authored; missing-source browser verification is still re-planned (automated no-match checks passed); private-repository access for the instructor must be available. These limitations remain despite completion of team contributions.
+- Biggest remaining risk: the successful deployed workflow and deterministic evaluations do not establish general live-model reliability. The report is complete as a record of delivered work and failures, but does not claim that every release-readiness or assessment requirement passed.
 - MCP transport, embeddings, real Canvas integration and write operations remain re-planned/excluded, not implemented features.
 
 ## Modules and AI-use log
 
-These are named responsibilities and AI-assisted change records, not invented individual commit authorship. Milestone 1 personal confirmations are preserved separately. Each owner must confirm the updated entry for this checkpoint.
+These are named responsibilities and AI-assisted change records, not invented individual commit authorship. Milestone 1 personal confirmations are preserved separately. Kateryna’s 24 November team-completion confirmation covers the assigned contributions and corrections. The entries summarize repository evidence and are not fabricated personal quotations or independent per-member attestations.
 
 | Member | Module | Link to their work | Tool and task | Accepted, changed or rejected | How it was checked |
 | --- | --- | --- | --- | --- | --- |
-| Kateryna Beliai | Product and Agent Experience | [Agent/UI](https://github.com/KaterynaBeliai/team5-campuscare/tree/milestone2-release/src/agent) | GPT/Codex: adapter, consent, deployment | Integrated consent-gated model path; rejected treating fallback as model success | Automated consent/API tests; production smoke; personal updated-log confirmation pending |
-| Danylo Mintii | MCP Tools and Integrations | [Registry/tools](https://github.com/KaterynaBeliai/team5-campuscare/tree/milestone2-release/src/tools) | GPT/Codex: input/output contracts | Retained local read-only adapter; rejected claiming MCP transport exists | Registered-tool and invalid-input tests; personal updated-log confirmation pending |
-| Bohdan Obukh | Knowledge Base and RAG | [Retrieval](https://github.com/KaterynaBeliai/team5-campuscare/tree/milestone2-release/src/knowledge) | GPT/Codex: lexical retrieval and source grounding | Added controlled synonyms; retained synthetic corpus and exact excerpts | Outcome comparison and citation/no-match tests; personal updated-log confirmation pending |
-| Ilya Vorobiov | Evaluation, Testing and Guardrails | [Evaluation](https://github.com/KaterynaBeliai/team5-campuscare/tree/milestone2-release/evals) | GPT/Codex: cases, grader, policies | Corrected overbroad security scoring; rejected invented human edits or model runs | 15 automated tests; offline regrade; criteria review reported by Kateryna, exact edits unavailable; final personal log confirmation pending |
+| Kateryna Beliai | Product and Agent Experience | [Agent/UI](https://github.com/KaterynaBeliai/team5-campuscare/tree/milestone2-release/src/agent) | GPT/Codex: adapter, consent, deployment | Integrated consent-gated model path; rejected treating fallback as model success | Automated consent/API tests; production smoke; team contribution/corrections confirmed by Kateryna (24 November) |
+| Danylo Mintii | MCP Tools and Integrations | [Registry/tools](https://github.com/KaterynaBeliai/team5-campuscare/tree/milestone2-release/src/tools) | GPT/Codex: input/output contracts | Retained local read-only adapter; rejected claiming MCP transport exists | Registered-tool and invalid-input tests; team contribution/corrections confirmed by Kateryna (24 November) |
+| Bohdan Obukh | Knowledge Base and RAG | [Retrieval](https://github.com/KaterynaBeliai/team5-campuscare/tree/milestone2-release/src/knowledge) | GPT/Codex: lexical retrieval and source grounding | Added controlled synonyms; retained synthetic corpus and exact excerpts | Outcome comparison and citation/no-match tests; team contribution/corrections confirmed by Kateryna (24 November) |
+| Ilya Vorobiov | Evaluation, Testing and Guardrails | [Evaluation](https://github.com/KaterynaBeliai/team5-campuscare/tree/milestone2-release/evals) | GPT/Codex: cases, grader, policies | Corrected overbroad security scoring; rejected invented human edits or model runs | 15 automated tests; offline regrade; criteria review reported by Kateryna, exact edits unavailable; team contribution/corrections confirmed by Kateryna (24 November) |

@@ -90,7 +90,7 @@
 
 ### T9: Document and verify deployment configuration
 
-- Milestone 2 status: re-planned — Vercel production is public at commit 6290a24aedcb10bd8a00ee4d3f9d8cdd0333864b; final release approval remains pending model evaluation.
+- Milestone 2 status: done — Vercel production is public at commit 1ec595c764dc925bfc2463bccccd82b761dd5e3c; deployment dpl_EX6UpnBeFAVGKKiNTidXs8XmZNE8 reached READY on 24 November 2026. Post-rotation consented API smoke completed in Gemini mode with a search tool call and grounded source. Full model-comparison limitations remain tracked under T5.
 
 - Task: Document the selected host, private repository connection method, environment variables, and demo-mode operation.
 - Serves: AC-6, AC-9
